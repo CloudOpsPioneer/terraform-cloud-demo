@@ -7,3 +7,5 @@ resource "time_sleep" "wait_30_seconds" {
 output "time_id" {
  value = time_sleep.wait_30_seconds.id
 }
+
+
