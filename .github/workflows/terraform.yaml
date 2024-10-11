@@ -5,10 +5,15 @@ on: [push]
 jobs:
   terraform_deploy:
     runs-on: ubuntu-latest
+    
     steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+      
     - uses: hashicorp/setup-terraform@v3
       with:
         terraform_version: "1.9.7"
+        
     - run: terraform init
 
     - id: plan
