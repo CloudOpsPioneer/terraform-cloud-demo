@@ -1,6 +1,6 @@
 name: terraform
 
-on: [push]
+on: [push, workflow_dispatch]
 
 jobs:
   terraform_deploy:
