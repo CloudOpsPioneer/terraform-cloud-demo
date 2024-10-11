@@ -1,6 +1,17 @@
 name: terraform
 
-on: [push, workflow_dispatch]
+on: 
+  push:
+  workflow_dispatch:
+    inputs:
+      apply_confirmation:
+        description: 'Confirm to run terraform apply'
+        required: true
+        type: choice
+        options:
+          - "yes"
+          - "no"
+        default: "no"
 
 jobs:
   terraform_deploy:
@@ -21,6 +32,6 @@ jobs:
       run: terraform plan
 
     - name: Terraform Apply
-      id: apply
-      run: terraform apply -auto-approve
-      if: github.ref == 'refs/heads/main'
+      if: ${{ github.event.inputs.apply_confirmation == 'yes' }}
+      run: terraform apply -auto-approve tfplan
+      # if: github.ref == 'refs/heads/main'
