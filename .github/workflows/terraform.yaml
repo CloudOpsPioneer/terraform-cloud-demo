@@ -16,9 +16,11 @@ jobs:
         
     - run: terraform init
 
-    - id: plan
-      run: terraform plan -no-color
+    - name: Terraform Plan
+      id: plan
+      run: terraform plan
 
-    - run: echo ${{ steps.plan.outputs.stdout }}
-    - run: echo ${{ steps.plan.outputs.stderr }}
-    - run: echo ${{ steps.plan.outputs.exitcode }}
+    - name: Terraform Apply
+      id: apply
+      run: terraform apply -auto-approve
+      if: github.ref == 'refs/heads/main'
