@@ -33,5 +33,5 @@ jobs:
 
     - name: Terraform Apply
       if: ${{ github.event.inputs.apply_confirmation == 'yes' }}
-      run: terraform apply -auto-approve tfplan
+      run: terraform apply -auto-approve
       # if: github.ref == 'refs/heads/main'
