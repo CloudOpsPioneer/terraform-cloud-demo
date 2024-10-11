@@ -1,6 +1,6 @@
 name: Greeting
 
-on: [push]
+# on: [push]
 
 jobs:
   say_hello:
