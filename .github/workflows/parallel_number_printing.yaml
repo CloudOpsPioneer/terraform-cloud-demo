@@ -5,7 +5,7 @@ on:
 
 jobs:
   print_number:
-    runs-on: eks_runner #arc-runner-set
+    runs-on: arc-runner-set
     strategy:
       matrix:
         number: [1, 2, 3, 4, 5]  # Define numbers to print
