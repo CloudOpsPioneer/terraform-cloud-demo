@@ -7,4 +7,4 @@ jobs:
     runs-on: eks_runner
     steps:
       - name: Print Hello
-        run: echo "Hello"
+        run: echo "Hello" && sleep 500
