@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
   say_hello_2:
-    runs-on: eks_runner
+    runs-on: arc-runner-set
     steps:
       - name: Print Hello
         run: echo "Hello" && sleep 500
