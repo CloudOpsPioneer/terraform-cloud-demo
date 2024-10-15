@@ -8,7 +8,7 @@ jobs:
     runs-on: eks_runner #arc-runner-set
     strategy:
       matrix:
-        number: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]  # Define numbers to print
+        number: [1, 2, 3, 4, 5]  # Define numbers to print
 
     steps:
       - name: Print number
