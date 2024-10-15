@@ -12,4 +12,4 @@ jobs:
 
     steps:
       - name: Print number
-        run: echo "Number ${{ matrix.number }}" && python3 version
+        run: echo "Number ${{ matrix.number }}" && python3 --version && aws --version
