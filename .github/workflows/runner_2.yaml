@@ -1,0 +1,10 @@
+name: Greeting Runner 2
+
+on: [push] 
+   
+jobs:
+  say_hello_2:
+    runs-on: eks_runner
+    steps:
+      - name: Print Hello
+        run: echo "Hello" && sleep 500
