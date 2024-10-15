@@ -1,4 +1,4 @@
-name: Greeting Runner
+name: Greeting Runner 1
 
 on: [push] 
    
