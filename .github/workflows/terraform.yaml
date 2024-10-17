@@ -38,7 +38,7 @@ jobs:
         role-to-assume: arn:aws:iam::530694037299:role/github-runner-arc-test-role
         aws-region: 'us-east-1'
         
-    - run: aws sts get-caller-identity      
+    - run: aws sts get-caller-identity && aws s3 ls | wc -l
 
     - run: terraform init
 
