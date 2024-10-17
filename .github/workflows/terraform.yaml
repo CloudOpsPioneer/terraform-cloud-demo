@@ -35,10 +35,10 @@ jobs:
     - name: Configure AWS via Role Assumption
       uses: aws-actions/configure-aws-credentials@v1
       with:
-        role-to-assume: arn:aws:iam::530694037299:role/github-runner-arc-test-role
+        role-to-assume: arn:aws:iam::530694037299:role/github-action-aws-workflow-iam-role
         aws-region: 'us-east-1'
         
-    - run: aws sts get-caller-identity && aws s3 ls | wc -l && aws lambda list-functions
+    - run: aws sts get-caller-identity && aws s3 ls | wc -l
 
     - run: terraform init
 
