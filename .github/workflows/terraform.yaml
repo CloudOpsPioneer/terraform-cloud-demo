@@ -25,14 +25,15 @@ jobs:
       with:
         terraform_version: "1.9.7"
 
-    - run: aws sts get-caller-identity
-      
     - name: Configure AWS via Role Assumption
       uses: aws-actions/configure-aws-credentials@v1
       with:
         role-to-assume: arn:aws:iam::530694037299:role/github-runner-arc-test-role
         aws-region: 'us-east-1'
         
+    - run: aws sts get-caller-identity
+      
+
     - run: terraform init
 
     - name: Terraform Plan
