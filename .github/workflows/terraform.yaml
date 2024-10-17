@@ -24,7 +24,9 @@ jobs:
     - uses: hashicorp/setup-terraform@v3
       with:
         terraform_version: "1.9.7"
-        
+
+    - run: aws sts get-caller-identity
+      
     - name: Configure AWS via Role Assumption
       uses: aws-actions/configure-aws-credentials@v1
       with:
