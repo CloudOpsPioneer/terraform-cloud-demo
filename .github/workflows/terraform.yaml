@@ -25,6 +25,12 @@ jobs:
       with:
         terraform_version: "1.9.7"
         
+    - name: Configure AWS via Role Assumption
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        role-to-assume: arn:aws:iam::123456789012:role/TerraformRole
+        aws-region: 'us-east-1'
+        
     - run: terraform init
 
     - name: Terraform Plan
